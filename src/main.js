@@ -1,4 +1,3 @@
-// main.js
 
 // 导入Vue，这个是必需的，在使用Vue之前，必须先导入
 import Vue from 'vue'
