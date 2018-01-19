@@ -61,11 +61,11 @@
   }
 </style>
 <script>
-  export default {
-    methods: {
-      goBack() {
-        window.history.back();
-      }
+export default {
+  methods: {
+    goBack() {
+      window.history.back();
     }
   }
+}
 </script>

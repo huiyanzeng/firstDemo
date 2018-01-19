@@ -1,9 +1,9 @@
 <!-- List.vue -->
 <template>
   <li class="sec_li">
-    <router-link to="/detail" class="lp_li_a">
+    <router-link to="/firstVue/detail" class="lp_li_a">
       <div class="lp_li_imgWrap">
-        <img :src="img"  alt="">
+        <img src="../assets/img/img1.jpg"  alt="">
       </div>
       <p class="lp_li_name">{{ title }}</p>
       <p class="lp_li_price">￥{{ price }}元</p>
@@ -11,21 +11,19 @@
   </li>
 </template>
 
-<style scoped>
+<style scoped lang="less">
   .sec_li {
     float: left;
     width: 50%;
     margin-bottom: 5px;
+    .lp_li_a {
+      display: block;
+      padding: 20px 0;
+      margin: 0 2px;
+      text-align: center;
+      background: #fff;
+    }
   }
-
-  .lp_li_a {
-    display: block;
-    padding: 20px 0;
-    margin: 0 2px;
-    text-align: center;
-    background: #fff;
-  }
-
   .lp_li_imgWrap {
     padding: 10px 0;
   }
@@ -51,7 +49,7 @@
 </style>
 
 <script>
-  export default {
-    props: ['price', 'title','img']
-  }
+export default {
+  props: ['price', 'title', 'img']
+}
 </script>

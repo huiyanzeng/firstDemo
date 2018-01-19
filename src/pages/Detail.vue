@@ -41,11 +41,11 @@
   }
 </style>
 <script>
-  import DetailHeader from '../components/DetailHeader'
+import DetailHeader from '../components/DetailHeader'
 
-  export default {
-    components: {
-      DetailHeader
-    }
+export default {
+  components: {
+    DetailHeader
   }
+}
 </script>

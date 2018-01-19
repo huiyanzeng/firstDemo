@@ -9,6 +9,7 @@
           v-for="item in items"
           :price="item.price"
           :title="item.title"
+          :key="item.id"
           :img="item.img">
         </list>
       </ul>
@@ -36,26 +37,26 @@
 </style>
 <script>
   // 导入要用到的子组件
-  import HomeHeader from '../components/HomeHeader'
+import HomeHeader from '../components/HomeHeader'
   import List from '../components/List'
 
-  export default {
-    data() {
-      return {
-        items: []
-      }
-    },
-    // 在components字段中，包含导入的子组件
-    components: {
-      HomeHeader,
-      List
-    },// 在组件创建完成时，执行的钩子函数
-    created (){
-      // 在main.js里导入并使用vue-resource之后，就可以通过this.$http来使用vue-resource了，这里我们用到了get方法
-      this.$http.get('/api/book').then((data) => {
-        // 由于请求成功返回的是Promise对象，我们要从data.body.data拿到books数组
-       this.items = data.body.data;
-      })
+export default {
+  data() {
+    return {
+      items: []
     }
+  },
+    // 在components字段中，包含导入的子组件
+  components: {
+    HomeHeader,
+    List
+  }, // 在组件创建完成时，执行的钩子函数
+  created (){
+      // 在main.js里导入并使用vue-resource之后，就可以通过this.$http来使用vue-resource了，这里我们用到了get方法
+    this.$http.get('/api/book').then((data) => {
+        // 由于请求成功返回的是Promise对象，我们要从data.body.data拿到books数组
+      this.items = data.body.data;
+    })
   }
+}
 </script>
